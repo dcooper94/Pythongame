@@ -35,7 +35,7 @@
 ## Installation
 
 ##### Downloading and installing steps:
-1. **[Download](https://github.com/dcooper94/Pythongame.git)** the latest version of the config.
+1. **[Download](https://github.com/dcooper94/Pythongame/releases)** the latest version of the config.
 2.  Open the _archive_ and **extract** the contents of the zip
 3. **Install** If you haven't already, you need to install Python on your computer. You can download Python from the official website: **[Download](https://Python.org)**. Make sure to install Python 3.x.
 4. **Copy the Code** Copy the Hangman game code provided earlier into a text editor or an Integrated Development Environment (IDE) like Visual Studio Code, PyCharm, or IDLE.
