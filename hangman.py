@@ -1,7 +1,9 @@
 import random
 
-def choose_word():
-    words = ['apple', 'banana', 'cherry', 'orange', 'grape']
+def choose_word(category):
+    file_path = f'{category.lower()}.txt'
+    with open(file_path, 'r') as file:
+        words = file.read().splitlines()
     return random.choice(words)
 
 def display_word(word, guessed_letters):
@@ -83,14 +85,33 @@ def display_hangman(incorrect_guesses):
     return stages[incorrect_guesses]
 
 def hangman():
-    word = choose_word()
+    categories = ['Animals', 'Fruits', 'Countries']  # Add more categories as needed
+    print("Welcome to Hangman!")
+    print("Choose a category:")
+    for i, category in enumerate(categories, 1):
+        print(f"{i}. {category}")
+
+    category_choice = input("Enter the number corresponding to your desired category: ")
+    try:
+        category_choice = int(category_choice)
+        if 1 <= category_choice <= len(categories):
+            category = categories[category_choice - 1]
+            word = choose_word(category)
+        else:
+            print("Invalid category choice. Please try again.")
+            return
+    except ValueError:
+        print("Invalid input. Please enter a number.")
+        return
+
     guessed_letters = set()
     max_attempts = 6
     attempts = 0
 
-    print("Welcome to Hangman!")
+    print("You have chosen the category:", category)
     while True:
-        print(display_word(word, guessed_letters))
+        current_display = display_word(word, guessed_letters)
+        print(current_display)
         print(display_hangman(attempts))
         guess = input("Guess a letter: ").lower()
 
@@ -105,7 +126,8 @@ def hangman():
 
         if guess in word:
             print("Correct!")
-            if display_word(word, guessed_letters) == word:
+            current_display = display_word(word, guessed_letters)
+            if current_display == word:
                 print(f"Congratulations! You guessed the word: {word}")
                 break
         else:
