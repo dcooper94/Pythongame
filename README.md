@@ -5,17 +5,6 @@
 
 <h4 align="center">My First attempt at creating a game in Python.</h4>
 
-<p align="center">
-    <a href="https://github.com/dcooper94/Pythongame/commits/master">
-    <img src="https://img.shields.io/github/last-commit/ArmynC/ArminC-AutoExec.svg?style=flat-square&logo=github&logoColor=white"
-         alt="GitHub last commit">
-    <a href="https://github.com/dcooper94/Pythongame/issues">
-    <img src="https://img.shields.io/github/issues-raw/ArmynC/ArminC-AutoExec.svg?style=flat-square&logo=github&logoColor=white"
-         alt="GitHub issues">
-    <a href="https://github.com/dcooper94/Pythongame/pulls">
-    <img src="https://img.shields.io/github/issues-pr-raw/ArmynC/ArminC-AutoExec.svg?style=flat-square&logo=github&logoColor=white"
-         alt="GitHub pull requests">
-</p>
       
 <p align="center">
   <a href="#installation">Installation</a> •
