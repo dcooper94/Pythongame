@@ -7,6 +7,81 @@ def choose_word():
 def display_word(word, guessed_letters):
     return ''.join(letter if letter in guessed_letters else '_' for letter in word)
 
+def display_hangman(incorrect_guesses):
+    stages = [
+        """
+           _______
+          |       |
+          |       O
+          |      /|\\
+          |      / \\
+         _|_
+        |   |______
+        |__________|
+        """,
+        """
+           _______
+          |       |
+          |       O
+          |      /|\\
+          |      /
+         _|_
+        |   |______
+        |__________|
+        """,
+        """
+           _______
+          |       |
+          |       O
+          |      /|\\
+          |
+         _|_
+        |   |______
+        |__________|
+        """,
+        """
+           _______
+          |       |
+          |       O
+          |      /|
+          |
+         _|_
+        |   |______
+        |__________|
+        """,
+        """
+           _______
+          |       |
+          |       O
+          |
+          |
+         _|_
+        |   |______
+        |__________|
+        """,
+        """
+           _______
+          |       |
+          |
+          |
+          |
+         _|_
+        |   |______
+        |__________|
+        """,
+        """
+           _______
+          |
+          |
+          |
+          |
+         _|_
+        |   |______
+        |__________|
+        """
+    ]
+    return stages[incorrect_guesses]
+
 def hangman():
     word = choose_word()
     guessed_letters = set()
@@ -16,6 +91,7 @@ def hangman():
     print("Welcome to Hangman!")
     while True:
         print(display_word(word, guessed_letters))
+        print(display_hangman(attempts))
         guess = input("Guess a letter: ").lower()
 
         if guess in guessed_letters:
@@ -37,6 +113,7 @@ def hangman():
             attempts += 1
             if attempts == max_attempts:
                 print("Sorry, you're out of attempts. The word was:", word)
+                print(display_hangman(attempts))
                 break
 
         print("")
