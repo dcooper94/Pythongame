@@ -21,8 +21,7 @@
 <tr>
 <td>
   
-**Hang Man** is my first game i have coded in Python, I am very new at coding and I use tools like ChatGPT to assist me in my learning. 
-
+**Hang Man** is my first game i have coded in Python. I started this project to learn more about coding and the Python Language in particular. 
 ![HangmanCode](https://raw.githubusercontent.com/dcooper94/Pythongame/main/HangmanCode.jpg)
 <p align="right">
 <sub>(Preview)</sub>
